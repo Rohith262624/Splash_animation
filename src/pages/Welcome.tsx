@@ -104,7 +104,7 @@ const Welcome = () => {
         </div>
       </div>
 
-      {/* Phase 2-4: Shopping Screen */}
+      {/* Phase 2-4: Shopping Screen with Bubble Transition */}
       <div
         className={`absolute inset-0 transition-all duration-1000 ${
           animationPhase >= 2 && animationPhase < 6
@@ -118,6 +118,13 @@ const Welcome = () => {
             #ffffff
           `,
           backgroundSize: "24px 24px",
+          clipPath:
+            animationPhase >= 2
+              ? animationPhase === 2
+                ? `circle(${Math.min(window.innerWidth, window.innerHeight) * 0.8}px at 85% 15%)`
+                : "circle(100% at 50% 50%)"
+              : "circle(0px at 85% 15%)",
+          transition: "clip-path 1.5s ease-out",
         }}
       >
         {/* Status Bar for shopping (black) */}
