@@ -142,9 +142,11 @@ const Welcome = () => {
 
         {/* Logo in top right */}
         <div className="absolute top-16 right-6 z-20">
-          <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">F</span>
-          </div>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F3a0eaa095f264d03898ed24c2288df2c%2F448051771e134fcca96484d086b1ffea?format=webp&width=800"
+            alt="Furrl Logo"
+            className="w-8 h-8 object-contain"
+          />
         </div>
 
         {/* Text Content */}
