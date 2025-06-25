@@ -64,9 +64,9 @@ const Welcome = () => {
         <div className="grid-background h-full relative">
           <div className="grid-overlay" />
 
-          {/* Fashion Model Image - Left Side - Bigger coverage */}
+          {/* Fashion Model Image - More to the left */}
           <div
-            className={`absolute left-0 top-16 bottom-0 w-4/5 z-10 transition-all duration-800 ${
+            className={`absolute -left-8 top-16 bottom-0 w-4/5 z-10 transition-all duration-800 ${
               animationPhase >= 1
                 ? "opacity-100 transform translate-y-0"
                 : "opacity-0 transform translate-y-4"
@@ -75,7 +75,7 @@ const Welcome = () => {
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F5a053cd832c143dd9116b984296a2eb7?format=webp&width=800"
               alt="Fashion model in pink dress"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-left"
             />
           </div>
 
