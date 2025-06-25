@@ -80,7 +80,10 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ onClose }) => {
             className="w-full bg-purple-400 text-white py-3 rounded-full font-medium text-sm mb-3 hover:bg-purple-500 transition-colors"
             onClick={() => {
               if (phoneNumber.length >= 10) {
-                navigate("/dashboard");
+                // Small delay to ensure smooth transition
+                setTimeout(() => {
+                  navigate("/dashboard");
+                }, 100);
               }
             }}
           >
