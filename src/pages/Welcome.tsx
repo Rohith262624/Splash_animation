@@ -20,12 +20,15 @@ const Welcome = () => {
       // Phase 4: Blue woman zooms into cart and fades (7-9s)
       setTimeout(() => setAnimationPhase(4), 7000),
 
-      // Phase 5: Shopping slides up and navigate to login (9s)
+      // Phase 5: Show disclaimer (9-12s)
+      setTimeout(() => setAnimationPhase(5), 9000),
+
+      // Phase 6: Scroll to login page (12s)
       setTimeout(() => {
-        setAnimationPhase(5);
-        // Navigate to login page after slide animation completes
+        setAnimationPhase(6);
+        // Navigate to login page after scroll animation completes
         setTimeout(() => navigate("/login"), 1000);
-      }, 9000),
+      }, 12000),
     ];
 
     return () => timers.forEach((timer) => clearTimeout(timer));
