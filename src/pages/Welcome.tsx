@@ -155,12 +155,12 @@ const Welcome = () => {
         {/* Text Content */}
         <div className="absolute top-32 right-6 z-20 text-right">
           <h1
-            className="text-4xl font-light text-gray-600 mb-2"
+            className="text-2xl font-light text-gray-600 mb-2"
             style={{ fontFamily: "serif" }}
           >
             Stylish
           </h1>
-          <h2 className="text-3xl font-bold text-gray-800">
+          <h2 className="text-xl font-bold text-gray-800">
             Homegrown
             <br />
             brands
