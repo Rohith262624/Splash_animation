@@ -29,7 +29,7 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ onClose }) => {
           {/* User provided image layer */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 animate-fade-in animate-delay-300">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F465f0dd4fa274115abdd38d201877cba?format=webp&width=800"
+              src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2Ff0dab140d7624db79d02eb8c31945c33?format=webp&width=800"
               alt="Fashion models"
               className="w-full h-full object-cover object-center"
             />
@@ -90,8 +90,23 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ onClose }) => {
           {/* Terms Text */}
           <p className="text-xs text-gray-500 text-center leading-tight">
             By continuing, I agree to Furrl's{" "}
-            <span className="text-purple-500 underline">T&C</span> and{" "}
-            <span className="text-purple-500 underline">Privacy Policy</span>
+            <button
+              onClick={() => {
+                window.open("/terms", "_blank");
+              }}
+              className="text-purple-500 underline hover:text-purple-600 transition-colors"
+            >
+              T&C
+            </button>{" "}
+            and{" "}
+            <button
+              onClick={() => {
+                window.open("/privacy", "_blank");
+              }}
+              className="text-purple-500 underline hover:text-purple-600 transition-colors"
+            >
+              Privacy Policy
+            </button>
           </p>
         </div>
       </div>
