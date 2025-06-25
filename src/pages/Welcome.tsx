@@ -65,8 +65,6 @@ const Welcome = () => {
           alt="Fashion model in pink dress"
           className="w-full h-full object-cover object-center"
         />
-        {/* Subtle gradient overlay to help text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/20"></div>
       </div>
 
       {/* Login Popup */}
