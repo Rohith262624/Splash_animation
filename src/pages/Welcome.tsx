@@ -164,9 +164,9 @@ const Welcome = () => {
           </h2>
         </div>
 
-        {/* Blue Woman Image - Left side initially */}
+        {/* Blue Woman Image - Left side initially - Made bigger */}
         <div
-          className={`absolute left-0 top-32 bottom-0 w-1/2 z-20 transition-all duration-2000 ${
+          className={`absolute left-0 top-16 bottom-0 w-3/5 z-20 transition-all duration-2000 ${
             animationPhase >= 2 && animationPhase < 4
               ? "opacity-100 transform translate-x-0 scale-100"
               : animationPhase >= 4
@@ -181,12 +181,12 @@ const Welcome = () => {
           />
         </div>
 
-        {/* Cart Interface Image - Comes up from bottom */}
+        {/* Cart Interface Image - Comes up from bottom - Made smaller and moved down */}
         <div
-          className={`absolute left-1/2 transform -translate-x-1/2 w-80 h-96 z-30 transition-all duration-1000 ${
+          className={`absolute left-1/2 transform -translate-x-1/2 w-64 h-80 z-30 transition-all duration-1000 ${
             animationPhase < 3
               ? "opacity-0 translate-y-full bottom-[-400px]"
-              : "opacity-100 translate-y-0 bottom-32"
+              : "opacity-100 translate-y-0 bottom-16"
           }`}
         >
           <img
