@@ -165,15 +165,11 @@ const Welcome = () => {
         {/* Text Content */}
         <div className="absolute top-28 right-6 z-20 text-right">
           <h1
-            className="text-2xl font-light text-gray-600 mb-4"
+            className="text-2xl font-light text-gray-600 mb-2"
             style={{ fontFamily: "Dancing Script, cursive" }}
           >
             Stylish
           </h1>
-        </div>
-
-        {/* Homegrown brands - moved down and left */}
-        <div className="absolute top-40 right-12 z-20 text-right">
           <h2 className="text-xl font-bold text-gray-800">Homegrown brands</h2>
         </div>
 
