@@ -41,45 +41,35 @@ const Welcome = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 h-full flex flex-col pt-16">
-        {/* Welcome Text */}
-        <div className="flex-1 flex items-center justify-center">
-          <h1 className="text-6xl font-bold text-white font-inter tracking-wide opacity-0 animate-text-reveal">
-            Welcome
-          </h1>
-        </div>
-
-        {/* Fashion Model Image */}
-        <div className="relative h-96 opacity-0 animate-slide-in-bottom animate-delay-600">
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 h-96">
+      <div className="relative z-10 h-full flex pt-16">
+        {/* Fashion Model Image - Left Side */}
+        <div className="w-1/2 h-full relative opacity-0 animate-slide-in-bottom animate-delay-600">
+          <div className="absolute bottom-8 left-4 w-40 h-80">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2Fb69a2f089fd245f4a565a41bfd514c26?format=webp&width=800"
+              src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F5a053cd832c143dd9116b984296a2eb7?format=webp&width=800"
               alt="Fashion model in pink dress"
               className="w-full h-full object-cover object-center"
             />
           </div>
-
-          {/* Decorative Elements */}
-          <div className="absolute bottom-8 right-8 w-12 h-12 opacity-80">
-            <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg transform rotate-12"></div>
-          </div>
-          <div className="absolute bottom-4 right-16 w-8 h-8 opacity-60">
-            <svg
-              className="w-full h-full text-pink-300"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-          </div>
         </div>
 
-        {/* Bottom Phone Frame */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-48 h-24 bg-black rounded-3xl border-4 border-gray-800 flex items-center justify-center opacity-0 animate-fade-in animate-delay-1200">
-          <div className="w-40 h-16 bg-white rounded-2xl flex items-center justify-center">
-            <span className="text-purple-400 text-lg font-bold font-inter">
-              Furrl
-            </span>
+        {/* Text Content - Right Side */}
+        <div className="w-1/2 h-full flex flex-col justify-center px-4">
+          <div className="text-left space-y-3">
+            {/* Welcome */}
+            <h1 className="text-4xl font-bold text-white font-inter opacity-0 animate-text-reveal">
+              Welcome
+            </h1>
+
+            {/* to a world of */}
+            <p className="text-lg text-white/90 font-serif italic opacity-0 animate-text-reveal animate-delay-300">
+              to a world of
+            </p>
+
+            {/* Fashion */}
+            <h2 className="text-4xl font-bold text-white font-inter opacity-0 animate-text-reveal animate-delay-600">
+              Fashion
+            </h2>
           </div>
         </div>
       </div>

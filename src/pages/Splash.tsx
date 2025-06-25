@@ -16,20 +16,6 @@ const Splash = () => {
     <div className="mobile-container grid-background relative overflow-hidden">
       <div className="grid-overlay" />
 
-      {/* Enhanced Grid Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage: `
-            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
-          `,
-            backgroundSize: "15px 15px",
-          }}
-        ></div>
-      </div>
-
       {/* Furrl Logo Text */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="text-center">
