@@ -103,7 +103,9 @@ const Welcome = () => {
       {/* Phase 2-4: Shopping Screen */}
       <div
         className={`absolute inset-0 transition-all duration-1000 ${
-          animationPhase >= 2 && animationPhase < 5 ? "opacity-100" : "opacity-0"
+          animationPhase >= 2 && animationPhase < 5
+            ? "opacity-100"
+            : "opacity-0"
         } ${animationPhase >= 5 ? "transform -translate-y-full" : ""}`}
         style={{
           background: `
@@ -229,8 +231,6 @@ const Welcome = () => {
 
       {/* Login Popup */}
       {showLogin && <LoginPopup onClose={() => setShowLogin(false)} />}
-    </div>
-  );
     </div>
   );
 };
