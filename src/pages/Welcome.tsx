@@ -94,12 +94,12 @@ const Welcome = () => {
             <h1 className="text-5xl font-bold text-white font-inter">
               Welcome
             </h1>
-            <p className="text-xl text-white/90 font-serif italic">
+            <p
+              className="text-3xl text-white/90 italic"
+              style={{ fontFamily: "Dancing Script, cursive" }}
+            >
               to a world of
             </p>
-            <h2 className="text-5xl font-bold text-white font-inter">
-              Fashion
-            </h2>
           </div>
         </div>
       </div>
