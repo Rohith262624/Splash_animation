@@ -122,12 +122,12 @@ const Welcome = () => {
           `,
           backgroundSize: "24px 24px",
           clipPath:
-            animationPhase >= 2
-              ? animationPhase === 2
-                ? `circle(${Math.min(window.innerWidth, window.innerHeight) * 0.8}px at 85% 15%)`
-                : "circle(100% at 50% 50%)"
-              : "circle(0px at 85% 15%)",
-          transition: "clip-path 1.5s ease-out",
+            animationPhase < 2
+              ? "circle(0px at 85% 15%)"
+              : animationPhase >= 2.5
+                ? "circle(150% at 85% 15%)"
+                : "circle(50% at 85% 15%)",
+          transition: "clip-path 1.5s cubic-bezier(0.4, 0.0, 0.2, 1)",
         }}
       >
         {/* Status Bar for shopping (black) */}
