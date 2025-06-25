@@ -48,9 +48,14 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Furrl brand colors */
-    --furrl-purple: 280 100% 70%;
-    --furrl-grid: 0 0% 10%;
+    /* Furrl brand colors - matched to designs */
+    --furrl-purple-start: 267 91% 67%;
+    --furrl-purple-mid: 274 84% 73%;
+    --furrl-purple-end: 280 88% 78%;
+    --furrl-yellow: 51 100% 65%;
+    --furrl-grid: 0 0% 8%;
+    --furrl-light-bg: 270 20% 96%;
+    --furrl-light-purple: 268 30% 85%;
   }
 
   .dark {
@@ -106,11 +111,12 @@
   }
 
   .grid-background {
-    background-image:
-      linear-gradient(to right, hsl(var(--furrl-grid)) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--furrl-grid)) 1px, transparent 1px);
-    background-size: 20px 20px;
-    background-position: 0 0;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--furrl-purple-start)) 0%,
+      hsl(var(--furrl-purple-mid)) 50%,
+      hsl(var(--furrl-purple-end)) 100%
+    );
   }
 
   .grid-overlay {
@@ -119,13 +125,19 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(168, 85, 247, 0.1) 0%,
-      rgba(139, 92, 246, 0.15) 50%,
-      rgba(124, 58, 237, 0.1) 100%
-    );
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 16px 16px;
     pointer-events: none;
+  }
+
+  .login-background {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--furrl-light-bg)) 0%,
+      hsl(var(--furrl-light-purple)) 100%
+    );
   }
 }
 
