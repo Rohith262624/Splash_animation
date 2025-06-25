@@ -247,6 +247,24 @@ const Welcome = () => {
           </div>
         </div>
       </div>
+
+      {/* Login Page Background - Revealed by shutter transition */}
+      <div
+        className={`absolute inset-0 bg-white transition-opacity duration-1000 ${
+          animationPhase >= 6 ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {/* Simple login page preview that gets revealed */}
+        <div className="flex items-center justify-center h-full">
+          <div className="text-center space-y-4">
+            <h1 className="text-4xl font-bold text-gray-800">Welcome Back</h1>
+            <p className="text-lg text-gray-600">Please sign in to continue</p>
+            <div className="w-80 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+              <span className="text-gray-500">Login Form</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
