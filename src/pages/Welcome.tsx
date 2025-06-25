@@ -194,44 +194,6 @@ const Welcome = () => {
           />
         </div>
       </div>
-
-      {/* Phase 5: Login Screen - Slides up from bottom */}
-      <div
-        className={`absolute inset-0 transition-all duration-1000 ${
-          animationPhase >= 5
-            ? "transform translate-y-0"
-            : "transform translate-y-full"
-        }`}
-      >
-        <div className="grid-background h-full relative">
-          <div className="grid-overlay" />
-
-          {/* Fashion Model Image - Left Side */}
-          <div className="absolute -left-8 top-16 bottom-0 w-4/5 z-10">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F5a053cd832c143dd9116b984296a2eb7?format=webp&width=800"
-              alt="Fashion model in pink dress"
-              className="w-full h-full object-cover object-left"
-            />
-          </div>
-
-          {/* Text Content - Top Right */}
-          <div className="absolute top-20 right-4 z-20 text-right space-y-3">
-            <h1 className="text-5xl font-bold text-white font-inter">
-              Welcome
-            </h1>
-            <p className="text-xl text-white/90 font-serif italic">
-              to a world of
-            </p>
-            <h2 className="text-5xl font-bold text-white font-inter">
-              Fashion
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      {/* Login Popup */}
-      {showLogin && <LoginPopup onClose={() => setShowLogin(false)} />}
     </div>
   );
 };
