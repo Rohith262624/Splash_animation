@@ -107,10 +107,10 @@ const Welcome = () => {
       {/* Phase 2-4: Shopping Screen */}
       <div
         className={`absolute inset-0 transition-all duration-1000 ${
-          animationPhase >= 2 && animationPhase < 5
+          animationPhase >= 2 && animationPhase < 6
             ? "opacity-100"
             : "opacity-0"
-        } ${animationPhase >= 5 ? "transform -translate-y-full" : ""}`}
+        } ${animationPhase >= 6 ? "transform -translate-y-full" : ""}`}
         style={{
           background: `
             linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
@@ -167,9 +167,9 @@ const Welcome = () => {
           </h2>
         </div>
 
-        {/* Blue Woman Image - Left side initially - Made bigger */}
+        {/* Blue Woman Image - Left side initially - Made even bigger */}
         <div
-          className={`absolute left-0 top-16 bottom-0 w-3/5 z-20 transition-all duration-2000 ${
+          className={`absolute left-0 top-16 bottom-0 w-4/5 z-20 transition-all duration-2000 ${
             animationPhase >= 2 && animationPhase < 4
               ? "opacity-100 transform translate-x-0 scale-100"
               : animationPhase >= 4
@@ -184,19 +184,58 @@ const Welcome = () => {
           />
         </div>
 
-        {/* Cart Interface Image - Comes up from bottom - Made smaller and moved down */}
+        {/* Cart Interface Image - No border, smaller, moved further down */}
         <div
-          className={`absolute left-1/2 transform -translate-x-1/2 w-64 h-80 z-30 transition-all duration-1000 ${
+          className={`absolute left-1/2 transform -translate-x-1/2 w-52 h-72 z-30 transition-all duration-1000 ${
             animationPhase < 3
               ? "opacity-0 translate-y-full bottom-[-400px]"
-              : "opacity-100 translate-y-0 bottom-16"
+              : "opacity-100 translate-y-0 bottom-8"
           }`}
         >
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F3a0eaa095f264d03898ed24c2288df2c%2F27101a47b96b4bf8ba4ec2725d0d5dc2?format=webp&width=800"
             alt="Furrl shopping interface"
-            className="w-full h-full object-cover object-center rounded-3xl shadow-2xl"
+            className="w-full h-full object-cover object-center"
           />
+        </div>
+
+        {/* Disclaimer - Appears after blue woman zooms out */}
+        <div
+          className={`absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center z-40 transition-all duration-800 ${
+            animationPhase >= 5
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
+          }`}
+        >
+          {/* Warning Triangle Icon */}
+          <div className="flex justify-center mb-3">
+            <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 9V13M12 17H12.01M4.22 18L12 4L19.78 18H4.22Z"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          {/* Disclaimer Text */}
+          <div className="space-y-1">
+            <p className="text-lg font-medium text-gray-800">
+              Our <span className="bg-yellow-300 px-1">Looks</span> are
+              addictive..
+            </p>
+            <p className="text-sm text-gray-600">Scroll at your own risk!</p>
+          </div>
         </div>
       </div>
     </div>
