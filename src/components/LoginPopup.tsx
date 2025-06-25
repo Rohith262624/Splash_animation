@@ -23,42 +23,46 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ onClose }) => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/40"></div>
         </div>
 
-        {/* Login Form */}
-        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 pb-8 opacity-0 animate-slide-up shadow-2xl">
+        {/* Login Form - Pixel Perfect Design */}
+        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl px-6 pt-6 pb-8 opacity-0 animate-slide-up shadow-2xl">
           {/* Handle */}
-          <div className="flex justify-center mb-4">
-            <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
+          <div className="flex justify-center mb-6">
+            <div className="w-10 h-1 bg-gray-400 rounded-full"></div>
           </div>
 
-          {/* Header */}
-          <div className="text-center mb-8">
-            <h3 className="text-lg font-medium text-gray-700 mb-3">
+          {/* Header Text */}
+          <div className="text-center mb-2">
+            <h3 className="text-lg font-normal text-gray-800 tracking-wide">
               Personalize your experience.
             </h3>
-            <div className="inline-block bg-yellow-400 px-6 py-2 rounded-full">
+          </div>
+
+          {/* Let's Go Button */}
+          <div className="text-center mb-8">
+            <div className="inline-block bg-yellow-400 px-8 py-2 rounded-full">
               <span className="text-sm font-bold text-black">Let's Go!</span>
             </div>
           </div>
 
-          {/* Phone Input */}
+          {/* Phone Input Section */}
           <div className="mb-8">
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center border-r border-gray-200 mr-4">
-                <span className="text-gray-500 text-base font-medium">+91</span>
-              </div>
+            <div className="flex items-center border-b border-gray-300 pb-3">
+              <span className="text-gray-600 text-base font-medium mr-4">
+                +91
+              </span>
               <input
                 type="tel"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 placeholder="Phone Number"
-                className="w-full pl-16 pr-4 py-4 border-b-2 border-gray-200 focus:border-purple-500 outline-none text-base bg-transparent transition-colors"
+                className="flex-1 text-base text-gray-800 placeholder-gray-500 bg-transparent outline-none"
               />
             </div>
           </div>
 
           {/* Continue Button */}
           <button
-            className="w-full bg-purple-400 text-white py-4 rounded-full font-semibold text-base mb-6 hover:bg-purple-500 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="w-full bg-purple-400 text-white py-4 rounded-full font-medium text-base mb-6 hover:bg-purple-500 transition-colors"
             onClick={() => {
               if (phoneNumber.length >= 10) {
                 navigate("/dashboard");
@@ -68,14 +72,11 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ onClose }) => {
             Continue
           </button>
 
-          {/* Terms */}
-          <p className="text-xs text-gray-500 text-center leading-relaxed px-4">
+          {/* Terms Text */}
+          <p className="text-xs text-gray-500 text-center leading-relaxed">
             By continuing, I agree to Furrl's{" "}
-            <span className="text-purple-500 underline font-medium">T&C</span>{" "}
-            and{" "}
-            <span className="text-purple-500 underline font-medium">
-              Privacy Policy
-            </span>
+            <span className="text-purple-500 underline">T&C</span> and{" "}
+            <span className="text-purple-500 underline">Privacy Policy</span>
           </p>
         </div>
       </div>
