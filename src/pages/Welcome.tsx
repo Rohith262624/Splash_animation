@@ -100,11 +100,11 @@ const Welcome = () => {
         </div>
       </div>
 
-      {/* Phase 2 & 3: Shopping Screen */}
+      {/* Phase 2-4: Shopping Screen */}
       <div
-        className={`absolute inset-0 transition-opacity duration-1000 ${
-          animationPhase >= 2 ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 transition-all duration-1000 ${
+          animationPhase >= 2 && animationPhase < 5 ? "opacity-100" : "opacity-0"
+        } ${animationPhase >= 5 ? "transform -translate-y-full" : ""}`}
         style={{
           background: `
             linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
@@ -145,7 +145,7 @@ const Welcome = () => {
         </div>
 
         {/* Text Content */}
-        <div className="absolute top-32 left-6 right-6 z-20">
+        <div className="absolute top-32 right-6 z-20 text-right">
           <h1
             className="text-4xl font-light text-gray-600 mb-2"
             style={{ fontFamily: "serif" }}
@@ -159,10 +159,29 @@ const Welcome = () => {
           </h2>
         </div>
 
-        {/* Cart Interface Image - Moved down */}
+        {/* Blue Woman Image - Left side initially */}
         <div
-          className={`absolute bottom-32 left-1/2 transform -translate-x-1/2 w-80 h-96 z-30 transition-all duration-1000 ${
-            animationPhase >= 2 ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          className={`absolute left-0 top-32 bottom-0 w-1/2 z-20 transition-all duration-2000 ${
+            animationPhase >= 2 && animationPhase < 4
+              ? "opacity-100 transform translate-x-0 scale-100"
+              : animationPhase >= 4
+                ? "opacity-0 transform translate-x-40 translate-y-32 scale-50"
+                : "opacity-0"
+          }`}
+        >
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F3a0eaa095f264d03898ed24c2288df2c%2F90a55bd3ad714779b72a3ef29795f572?format=webp&width=800"
+            alt="Woman in blue dress"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        {/* Cart Interface Image - Comes up from bottom */}
+        <div
+          className={`absolute left-1/2 transform -translate-x-1/2 w-80 h-96 z-30 transition-all duration-1000 ${
+            animationPhase < 3
+              ? "opacity-0 translate-y-full bottom-[-400px]"
+              : "opacity-100 translate-y-0 bottom-32"
           }`}
         >
           <img
@@ -171,24 +190,47 @@ const Welcome = () => {
             className="w-full h-full object-cover object-center rounded-3xl shadow-2xl"
           />
         </div>
+      </div>
 
-        {/* Blue Woman Image - Zooms out and goes under cart */}
-        <div
-          className={`absolute transition-all duration-2000 z-20 ${
-            animationPhase < 3
-              ? "bottom-0 left-0 w-full h-3/5 opacity-100"
-              : "bottom-40 left-1/2 transform -translate-x-1/2 w-64 h-80 opacity-80 scale-75"
-          }`}
-        >
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F3a0eaa095f264d03898ed24c2288df2c%2F90a55bd3ad714779b72a3ef29795f572?format=webp&width=800"
-            alt="Woman in blue dress"
-            className={`w-full h-full object-cover object-center transition-all duration-2000 ${
-              animationPhase >= 3 ? "rounded-2xl" : ""
-            }`}
-          />
+      {/* Phase 5: Login Screen - Slides up from bottom */}
+      <div
+        className={`absolute inset-0 transition-all duration-1000 ${
+          animationPhase >= 5
+            ? "transform translate-y-0"
+            : "transform translate-y-full"
+        }`}
+      >
+        <div className="grid-background h-full relative">
+          <div className="grid-overlay" />
+
+          {/* Fashion Model Image - Left Side */}
+          <div className="absolute -left-8 top-16 bottom-0 w-4/5 z-10">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F5a053cd832c143dd9116b984296a2eb7?format=webp&width=800"
+              alt="Fashion model in pink dress"
+              className="w-full h-full object-cover object-left"
+            />
+          </div>
+
+          {/* Text Content - Top Right */}
+          <div className="absolute top-20 right-4 z-20 text-right space-y-3">
+            <h1 className="text-5xl font-bold text-white font-inter">
+              Welcome
+            </h1>
+            <p className="text-xl text-white/90 font-serif italic">
+              to a world of
+            </p>
+            <h2 className="text-5xl font-bold text-white font-inter">
+              Fashion
+            </h2>
+          </div>
         </div>
       </div>
+
+      {/* Login Popup */}
+      {showLogin && <LoginPopup onClose={() => setShowLogin(false)} />}
+    </div>
+  );
     </div>
   );
 };
