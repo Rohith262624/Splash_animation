@@ -113,7 +113,7 @@ const Welcome = () => {
           animationPhase >= 2 && animationPhase < 6
             ? "opacity-100"
             : "opacity-0"
-        } ${animationPhase >= 6 ? "transform -translate-y-full" : ""}`}
+        } ${animationPhase >= 6 ? "transform -translate-y-full transition-transform duration-1500 ease-in-out" : ""}`}
         style={{
           background: `
             linear-gradient(rgba(200,200,200,0.15) 1px, transparent 1px),
