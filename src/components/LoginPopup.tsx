@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface LoginPopupProps {
   onClose: () => void;
@@ -6,6 +7,7 @@ interface LoginPopupProps {
 
 const LoginPopup: React.FC<LoginPopupProps> = ({ onClose }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const navigate = useNavigate();
 
   return (
     <div className="fixed inset-0 z-50">
@@ -63,8 +65,9 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ onClose }) => {
           <button
             className="w-full bg-purple-400 text-white py-4 rounded-full font-medium text-base mb-4 hover:bg-purple-500 transition-colors"
             onClick={() => {
-              // Handle continue logic here
-              console.log("Continue with phone:", phoneNumber);
+              if (phoneNumber.length >= 10) {
+                navigate("/dashboard");
+              }
             }}
           >
             Continue
