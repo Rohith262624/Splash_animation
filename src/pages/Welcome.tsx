@@ -26,12 +26,15 @@ const Welcome = () => {
       // Phase 5: Show disclaimer (9-10s)
       setTimeout(() => setAnimationPhase(5), 9000),
 
-      // Phase 6: Scroll to login page (10s)
+      // Phase 6: White screen transition (10s)
+      setTimeout(() => setAnimationPhase(6), 10000),
+
+      // Phase 7: Shutter effect revealing login (11s)
       setTimeout(() => {
-        setAnimationPhase(6);
-        // Navigate to login page after scroll animation completes
-        setTimeout(() => navigate("/login"), 1000);
-      }, 10000),
+        setAnimationPhase(7);
+        // Navigate to login page after shutter animation completes
+        setTimeout(() => navigate("/login"), 1500);
+      }, 11000),
     ];
 
     return () => timers.forEach((timer) => clearTimeout(timer));
@@ -113,7 +116,7 @@ const Welcome = () => {
           animationPhase >= 2 && animationPhase < 6
             ? "opacity-100"
             : "opacity-0"
-        } ${animationPhase >= 6 ? "transform -translate-y-full transition-transform duration-1500 ease-in-out" : ""}`}
+        } ${animationPhase >= 6 ? "transform -translate-y-full transition-transform duration-1000 ease-in-out" : ""}`}
         style={{
           background: `
             linear-gradient(rgba(200,200,200,0.15) 1px, transparent 1px),
@@ -163,14 +166,14 @@ const Welcome = () => {
         </div>
 
         {/* Text Content */}
-        <div className="absolute top-28 right-6 z-20 text-right">
+        <div className="absolute top-28 right-10 z-20 text-right">
           <h1
             className="text-2xl font-light text-gray-600 mb-2"
             style={{ fontFamily: "Dancing Script, cursive" }}
           >
             Stylish
           </h1>
-          <h2 className="text-xl font-bold text-gray-800">Homegrown brands</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Homegrown brands</h2>
         </div>
 
         {/* Blue Woman Image - Left side initially - Made even bigger */}
@@ -240,6 +243,59 @@ const Welcome = () => {
               Our Looks are addictive..
             </p>
             <p className="text-base text-gray-500">Scroll at your own risk!</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Phase 6-7: White Screen with Shutter Effect */}
+      <div
+        className={`absolute inset-0 bg-white z-50 transition-all duration-1000 ${
+          animationPhase >= 6 && animationPhase < 7
+            ? "opacity-100"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Main white screen */}
+        <div className="w-full h-full bg-white relative overflow-hidden">
+          {/* Shutter Effect - Revealing login underneath */}
+          <div
+            className={`absolute inset-0 bg-white transition-all duration-1500 ease-in-out ${
+              animationPhase >= 7
+                ? "transform -translate-y-full"
+                : "transform translate-y-0"
+            }`}
+            style={{
+              boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+            }}
+          />
+
+          {/* Login page preview (visible through shutter) */}
+          <div className="absolute inset-0">
+            <div className="grid-background h-full relative">
+              <div className="grid-overlay" />
+
+              {/* Fashion Model Image - Same as login page */}
+              <div className="absolute left-0 top-16 bottom-0 w-4/5 z-10">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F5a053cd832c143dd9116b984296a2eb7?format=webp&width=800"
+                  alt="Fashion model in pink dress"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+
+              {/* Text Content - Same as login page */}
+              <div className="absolute top-20 right-4 z-20 text-right space-y-3">
+                <h1 className="text-5xl font-bold text-white font-inter">
+                  Welcome
+                </h1>
+                <p className="text-xl text-white/90 font-serif italic">
+                  to a world of
+                </p>
+                <h2 className="text-5xl font-bold text-white font-inter">
+                  Fashion
+                </h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
