@@ -184,12 +184,14 @@ const Welcome = () => {
           />
         </div>
 
-        {/* Cart Interface Image - No border, smaller, moved further down */}
+        {/* Cart Interface Image - Smaller, centered, transitions with blue woman */}
         <div
-          className={`absolute left-1/2 transform -translate-x-1/2 w-52 h-72 z-30 transition-all duration-1000 ${
+          className={`absolute left-1/2 transform -translate-x-1/2 w-40 h-56 z-30 transition-all duration-2000 ${
             animationPhase < 3
               ? "opacity-0 translate-y-full bottom-[-400px]"
-              : "opacity-100 translate-y-0 bottom-8"
+              : animationPhase < 4
+                ? "opacity-100 translate-y-0 bottom-32"
+                : "opacity-100 translate-y-0 bottom-32 scale-90"
           }`}
         >
           <img
@@ -199,20 +201,20 @@ const Welcome = () => {
           />
         </div>
 
-        {/* Disclaimer - Appears after blue woman zooms out */}
+        {/* Disclaimer Text - Below cart, appears with zoom animations */}
         <div
-          className={`absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center z-40 transition-all duration-800 ${
-            animationPhase >= 5
+          className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-40 transition-all duration-2000 ${
+            animationPhase >= 4
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"
           }`}
         >
           {/* Warning Triangle Icon */}
-          <div className="flex justify-center mb-3">
-            <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+          <div className="flex justify-center mb-2">
+            <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
               <svg
-                width="20"
-                height="20"
+                width="16"
+                height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -228,13 +230,12 @@ const Welcome = () => {
             </div>
           </div>
 
-          {/* Disclaimer Text */}
+          {/* Disclaimer Text - All in one line, black text */}
           <div className="space-y-1">
-            <p className="text-lg font-medium text-gray-800">
-              Our <span className="bg-yellow-300 px-1">Looks</span> are
-              addictive..
+            <p className="text-base font-medium text-black whitespace-nowrap">
+              Our Looks are addictive..
             </p>
-            <p className="text-sm text-gray-600">Scroll at your own risk!</p>
+            <p className="text-sm text-gray-500">Scroll at your own risk!</p>
           </div>
         </div>
       </div>
