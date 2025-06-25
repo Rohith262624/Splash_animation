@@ -158,7 +158,7 @@ const Welcome = () => {
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F3a0eaa095f264d03898ed24c2288df2c%2F448051771e134fcca96484d086b1ffea?format=webp&width=800"
             alt="Furrl Logo"
-            className="w-8 h-8 object-contain"
+            className="w-12 h-12 object-contain"
           />
         </div>
 
