@@ -113,11 +113,11 @@ const Welcome = () => {
         } ${animationPhase >= 6 ? "transform -translate-y-full" : ""}`}
         style={{
           background: `
-            linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px),
-            #f8f9fa
+            linear-gradient(rgba(200,200,200,0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(200,200,200,0.15) 1px, transparent 1px),
+            #ffffff
           `,
-          backgroundSize: "20px 20px",
+          backgroundSize: "24px 24px",
         }}
       >
         {/* Status Bar for shopping (black) */}
