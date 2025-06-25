@@ -169,7 +169,7 @@ const Welcome = () => {
 
         {/* Blue Woman Image - Left side initially - Made even bigger */}
         <div
-          className={`absolute left-0 top-16 bottom-0 w-4/5 z-20 transition-all duration-2000 ${
+          className={`absolute left-0 top-16 bottom-0 w-4/5 z-20 transition-all duration-3000 ${
             animationPhase >= 2 && animationPhase < 3
               ? "opacity-100 transform translate-x-0 scale-100"
               : animationPhase >= 3
