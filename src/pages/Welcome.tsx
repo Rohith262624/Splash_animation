@@ -160,11 +160,7 @@ const Welcome = () => {
           >
             Stylish
           </h1>
-          <h2 className="text-xl font-bold text-gray-800">
-            Homegrown
-            <br />
-            brands
-          </h2>
+          <h2 className="text-xl font-bold text-gray-800">Homegrown brands</h2>
         </div>
 
         {/* Blue Woman Image - Left side initially - Made even bigger */}
