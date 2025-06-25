@@ -8,20 +8,20 @@ const Welcome = () => {
   useEffect(() => {
     // Animation sequence timeline
     const timers = [
-      // Phase 1: Show initial background and text (0-2s)
+      // Phase 1: Show welcome screen (0-3s)
       setTimeout(() => setAnimationPhase(1), 500),
 
-      // Phase 2: Mobile appears and woman zooms into it (2-4s)
-      setTimeout(() => setAnimationPhase(2), 2000),
+      // Phase 2: Transition to shopping screen with blue woman (3-5s)
+      setTimeout(() => setAnimationPhase(2), 3000),
 
-      // Phase 3: Add shopping icons to mobile (4-5s)
-      setTimeout(() => setAnimationPhase(3), 4000),
+      // Phase 3: Zoom out to show cart interface (5-7s)
+      setTimeout(() => setAnimationPhase(3), 5000),
 
-      // Phase 4: Phone moves up, reveal login (5-7s)
-      setTimeout(() => setAnimationPhase(4), 5000),
+      // Phase 4: Phone moves up, reveal login (7-9s)
+      setTimeout(() => setAnimationPhase(4), 7000),
 
-      // Phase 5: Show login popup (7s)
-      setTimeout(() => setShowLogin(true), 7000),
+      // Phase 5: Show login popup (9s)
+      setTimeout(() => setShowLogin(true), 9000),
     ];
 
     return () => timers.forEach((timer) => clearTimeout(timer));
