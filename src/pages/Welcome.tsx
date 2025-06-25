@@ -40,38 +40,33 @@ const Welcome = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 h-full flex pt-16">
-        {/* Fashion Model Image - Left Side */}
-        <div className="w-1/2 h-full relative opacity-0 animate-slide-in-bottom animate-delay-600">
-          <div className="absolute bottom-8 left-4 w-40 h-80">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F5a053cd832c143dd9116b984296a2eb7?format=webp&width=800"
-              alt="Fashion model in pink dress"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-        </div>
+      {/* Text Content - Top Right */}
+      <div className="absolute top-16 right-4 z-20 text-right space-y-2">
+        {/* Welcome */}
+        <h1 className="text-3xl font-bold text-white font-inter opacity-0 animate-text-reveal">
+          Welcome
+        </h1>
 
-        {/* Text Content - Right Side */}
-        <div className="w-1/2 h-full flex flex-col justify-center px-4">
-          <div className="text-left space-y-3">
-            {/* Welcome */}
-            <h1 className="text-4xl font-bold text-white font-inter opacity-0 animate-text-reveal">
-              Welcome
-            </h1>
+        {/* to a world of */}
+        <p className="text-base text-white/90 font-serif italic opacity-0 animate-text-reveal animate-delay-300">
+          to a world of
+        </p>
 
-            {/* to a world of */}
-            <p className="text-lg text-white/90 font-serif italic opacity-0 animate-text-reveal animate-delay-300">
-              to a world of
-            </p>
+        {/* Fashion */}
+        <h2 className="text-3xl font-bold text-white font-inter opacity-0 animate-text-reveal animate-delay-600">
+          Fashion
+        </h2>
+      </div>
 
-            {/* Fashion */}
-            <h2 className="text-4xl font-bold text-white font-inter opacity-0 animate-text-reveal animate-delay-600">
-              Fashion
-            </h2>
-          </div>
-        </div>
+      {/* Fashion Model Image - Left Side (Full Coverage) */}
+      <div className="absolute left-0 top-16 bottom-0 w-3/5 z-10 opacity-0 animate-slide-in-bottom animate-delay-600">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F5a053cd832c143dd9116b984296a2eb7?format=webp&width=800"
+          alt="Fashion model in pink dress"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Subtle gradient overlay to help text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/20"></div>
       </div>
 
       {/* Login Popup */}
