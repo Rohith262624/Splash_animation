@@ -13,23 +13,14 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ onClose }) => {
     <div className="fixed inset-0 z-50 flex items-end justify-center">
       {/* Mobile Container */}
       <div className="mobile-container h-full relative">
-        {/* Background Image */}
+        {/* Full Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F1816d02c76ee43688759ee3e3ca8810d?format=webp&width=800')`,
+            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2Fb3a7fb72d8bd451cb65d264c4aeaa060?format=webp&width=800')`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-white/80"></div>
-        </div>
-
-        {/* Fashion Models */}
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-72 h-64 opacity-0 animate-fade-in">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2F30eee0bb43784c09a3914d1506476a0f?format=webp&width=800"
-            alt="Fashion models"
-            className="w-full h-full object-cover object-center rounded-2xl"
-          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/40"></div>
         </div>
 
         {/* Login Form */}
