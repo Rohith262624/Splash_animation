@@ -189,9 +189,7 @@ const Welcome = () => {
           className={`absolute left-1/2 transform -translate-x-1/2 w-40 h-56 z-30 transition-all duration-2000 ${
             animationPhase < 3
               ? "opacity-0 translate-y-full bottom-[-400px]"
-              : animationPhase < 4
-                ? "opacity-100 translate-y-0 bottom-32"
-                : "opacity-100 translate-y-0 bottom-32 scale-90"
+              : "opacity-100 translate-y-0 bottom-32"
           }`}
         >
           <img
