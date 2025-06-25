@@ -20,6 +20,10 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ onClose }) => {
             backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F86370941743a488d90cea8fe041f4141%2Fb3a7fb72d8bd451cb65d264c4aeaa060?format=webp&width=800')`,
           }}
         >
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: "#cccccc", opacity: 0.6 }}
+          ></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/40"></div>
         </div>
 
