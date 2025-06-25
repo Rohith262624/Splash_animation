@@ -11,8 +11,11 @@ const Welcome = () => {
       // Phase 1: Show welcome screen (0-3s)
       setTimeout(() => setAnimationPhase(1), 500),
 
-      // Phase 2: Fade to shopping screen with blue woman on left (3-5s)
+      // Phase 2: Start bubble transition (3s)
       setTimeout(() => setAnimationPhase(2), 3000),
+
+      // Phase 2.5: Complete bubble transition to shopping screen (3.5s)
+      setTimeout(() => setAnimationPhase(2.5), 3500),
 
       // Phase 3: Cart comes up from bottom AND Blue woman exits (5-7s)
       setTimeout(() => setAnimationPhase(3), 5000),
