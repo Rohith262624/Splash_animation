@@ -26,10 +26,10 @@ const Welcome = () => {
       // Phase 5: Show disclaimer (9-10s)
       setTimeout(() => setAnimationPhase(5), 9000),
 
-      // Phase 6: Scroll to login page (10s)
+      // Phase 6: Slide up transition to login page (10s)
       setTimeout(() => {
         setAnimationPhase(6);
-        // Navigate to login page after scroll animation completes
+        // Navigate to login page after slide up animation completes
         setTimeout(() => navigate("/login"), 1000);
       }, 10000),
     ];
@@ -113,7 +113,7 @@ const Welcome = () => {
           animationPhase >= 2 && animationPhase < 6
             ? "opacity-100"
             : "opacity-0"
-        } ${animationPhase >= 6 ? "transform -translate-y-full transition-transform duration-1500 ease-in-out" : ""}`}
+        } ${animationPhase >= 6 ? "transform translate-y-full transition-transform duration-1000 ease-in-out" : ""}`}
         style={{
           background: `
             linear-gradient(rgba(200,200,200,0.15) 1px, transparent 1px),
@@ -163,14 +163,14 @@ const Welcome = () => {
         </div>
 
         {/* Text Content */}
-        <div className="absolute top-28 right-6 z-20 text-right">
+        <div className="absolute top-28 right-10 z-20 text-right">
           <h1
             className="text-2xl font-light text-gray-600 mb-2"
             style={{ fontFamily: "Dancing Script, cursive" }}
           >
             Stylish
           </h1>
-          <h2 className="text-xl font-bold text-gray-800">Homegrown brands</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Homegrown brands</h2>
         </div>
 
         {/* Blue Woman Image - Left side initially - Made even bigger */}
