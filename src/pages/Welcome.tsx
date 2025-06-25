@@ -230,10 +230,10 @@ const Welcome = () => {
 
           {/* Disclaimer Text - All in one line, black text */}
           <div className="space-y-1">
-            <p className="text-sm font-medium text-black whitespace-nowrap">
+            <p className="text-lg font-medium text-black whitespace-nowrap">
               Our Looks are addictive..
             </p>
-            <p className="text-xs text-gray-500">Scroll at your own risk!</p>
+            <p className="text-base text-gray-500">Scroll at your own risk!</p>
           </div>
         </div>
       </div>
