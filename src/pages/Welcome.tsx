@@ -70,7 +70,7 @@ const Welcome = () => {
 
           {/* Fashion Model Image - More to the left */}
           <div
-            className={`absolute -left-8 top-16 bottom-0 w-4/5 z-10 transition-all duration-800 ${
+            className={`absolute -left-16 top-16 bottom-0 w-4/5 z-10 transition-all duration-800 ${
               animationPhase >= 1
                 ? "opacity-100 transform translate-y-0"
                 : "opacity-0 transform translate-y-4"
