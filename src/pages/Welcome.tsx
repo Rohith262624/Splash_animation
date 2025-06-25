@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import LoginPopup from "../components/LoginPopup";
+import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
   const [animationPhase, setAnimationPhase] = useState(0);
-  const [showLogin, setShowLogin] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Animation sequence timeline
@@ -20,15 +20,16 @@ const Welcome = () => {
       // Phase 4: Blue woman zooms into cart and fades (7-9s)
       setTimeout(() => setAnimationPhase(4), 7000),
 
-      // Phase 5: Slide to login (9-11s)
-      setTimeout(() => setAnimationPhase(5), 9000),
-
-      // Phase 6: Show login popup (11s)
-      setTimeout(() => setShowLogin(true), 11000),
+      // Phase 5: Shopping slides up and navigate to login (9s)
+      setTimeout(() => {
+        setAnimationPhase(5);
+        // Navigate to login page after slide animation completes
+        setTimeout(() => navigate("/login"), 1000);
+      }, 9000),
     ];
 
     return () => timers.forEach((timer) => clearTimeout(timer));
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="mobile-container relative overflow-hidden">
