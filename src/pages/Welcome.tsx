@@ -20,15 +20,15 @@ const Welcome = () => {
       // Phase 4: Show disclaimer (7-9s)
       setTimeout(() => setAnimationPhase(4), 7000),
 
-      // Phase 5: Show disclaimer (9-12s)
+      // Phase 5: Show disclaimer (9-10s)
       setTimeout(() => setAnimationPhase(5), 9000),
 
-      // Phase 6: Scroll to login page (12s)
+      // Phase 6: Scroll to login page (10s)
       setTimeout(() => {
         setAnimationPhase(6);
         // Navigate to login page after scroll animation completes
         setTimeout(() => navigate("/login"), 1000);
-      }, 12000),
+      }, 10000),
     ];
 
     return () => timers.forEach((timer) => clearTimeout(timer));
