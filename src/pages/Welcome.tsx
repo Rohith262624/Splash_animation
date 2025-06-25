@@ -14,10 +14,10 @@ const Welcome = () => {
       // Phase 2: Fade to shopping screen with blue woman on left (3-5s)
       setTimeout(() => setAnimationPhase(2), 3000),
 
-      // Phase 3: Cart comes up from bottom (5-7s)
+      // Phase 3: Cart comes up from bottom AND Blue woman exits (5-7s)
       setTimeout(() => setAnimationPhase(3), 5000),
 
-      // Phase 4: Blue woman zooms into cart and fades (7-9s)
+      // Phase 4: Show disclaimer (7-9s)
       setTimeout(() => setAnimationPhase(4), 7000),
 
       // Phase 5: Show disclaimer (9-12s)
