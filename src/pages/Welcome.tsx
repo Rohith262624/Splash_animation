@@ -47,21 +47,23 @@ const Welcome = () => {
         </div>
 
         {/* Fashion Model Image */}
-        <div className="relative h-96 opacity-0 animate-slide-in-bottom animate-delay-900">
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 h-96">
-            {/* Placeholder for fashion model image */}
-            <div className="w-full h-full bg-gradient-to-t from-purple-900/50 to-transparent rounded-t-3xl border border-white/20 flex items-center justify-center">
-              <div className="text-white/60 text-center">
-                <div className="w-32 h-32 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+        <div className="relative flex-shrink-0 h-80 opacity-0 animate-slide-in-bottom animate-delay-900">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-64 h-80">
+            {/* Fashion model placeholder - replace with actual image */}
+            <div className="w-full h-full bg-gradient-to-t from-purple-900/30 via-purple-800/20 to-transparent rounded-t-3xl border border-white/10 flex items-center justify-center overflow-hidden">
+              <div className="text-white/50 text-center">
+                <div className="w-24 h-24 bg-white/5 rounded-full mx-auto mb-3 flex items-center justify-center">
                   <svg
-                    className="w-16 h-16 text-white/40"
+                    className="w-12 h-12 text-white/30"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 5.5V4H13V5.5L7 7V9L13 7.5L21 9ZM13 10.5V13H11V10.5L5 12V18C5 19.1 5.9 20 7 20H17C18.1 20 19 19.1 19 18V12L13 10.5Z" />
                   </svg>
                 </div>
-                <p className="text-sm font-inter">Fashion Model</p>
+                <p className="text-xs font-inter text-white/40">
+                  Fashion Model
+                </p>
               </div>
             </div>
           </div>
