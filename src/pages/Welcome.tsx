@@ -99,7 +99,7 @@ const Welcome = () => {
             </h1>
             <p
               className="text-3xl text-white/90 italic"
-              style={{ fontFamily: "Dancing Script, cursive" }}
+              style={{ fontFamily: "Pacifico, cursive" }}
             >
               to a world of
             </p>
