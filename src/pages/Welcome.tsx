@@ -11,24 +11,27 @@ const Welcome = () => {
       // Phase 1: Show welcome screen (0-3s)
       setTimeout(() => setAnimationPhase(1), 500),
 
-      // Phase 2: Fade to shopping screen with blue woman on left (3-5s)
+      // Phase 2: Start bubble transition (3s)
       setTimeout(() => setAnimationPhase(2), 3000),
 
-      // Phase 3: Cart comes up from bottom (5-7s)
+      // Phase 2.5: Complete bubble transition to shopping screen (3.5s)
+      setTimeout(() => setAnimationPhase(2.5), 3500),
+
+      // Phase 3: Cart comes up from bottom AND Blue woman exits (5-7s)
       setTimeout(() => setAnimationPhase(3), 5000),
 
-      // Phase 4: Blue woman zooms into cart and fades (7-9s)
+      // Phase 4: Show disclaimer (7-9s)
       setTimeout(() => setAnimationPhase(4), 7000),
 
-      // Phase 5: Show disclaimer (9-12s)
+      // Phase 5: Show disclaimer (9-10s)
       setTimeout(() => setAnimationPhase(5), 9000),
 
-      // Phase 6: Scroll to login page (12s)
+      // Phase 6: Scroll to login page (10s)
       setTimeout(() => {
         setAnimationPhase(6);
         // Navigate to login page after scroll animation completes
         setTimeout(() => navigate("/login"), 1000);
-      }, 12000),
+      }, 10000),
     ];
 
     return () => timers.forEach((timer) => clearTimeout(timer));
@@ -70,7 +73,7 @@ const Welcome = () => {
 
           {/* Fashion Model Image - More to the left */}
           <div
-            className={`absolute -left-8 top-16 bottom-0 w-4/5 z-10 transition-all duration-800 ${
+            className={`absolute -left-16 top-16 bottom-0 w-4/5 z-10 transition-all duration-800 ${
               animationPhase >= 1
                 ? "opacity-100 transform translate-y-0"
                 : "opacity-0 transform translate-y-4"
@@ -94,23 +97,23 @@ const Welcome = () => {
             <h1 className="text-5xl font-bold text-white font-inter">
               Welcome
             </h1>
-            <p className="text-xl text-white/90 font-serif italic">
+            <p
+              className="text-3xl text-white/90 italic"
+              style={{ fontFamily: "Pacifico, cursive" }}
+            >
               to a world of
             </p>
-            <h2 className="text-5xl font-bold text-white font-inter">
-              Fashion
-            </h2>
           </div>
         </div>
       </div>
 
-      {/* Phase 2-4: Shopping Screen */}
+      {/* Phase 2-4: Shopping Screen with Bubble Transition */}
       <div
         className={`absolute inset-0 transition-all duration-1000 ${
           animationPhase >= 2 && animationPhase < 6
             ? "opacity-100"
             : "opacity-0"
-        } ${animationPhase >= 6 ? "transform -translate-y-full" : ""}`}
+        } ${animationPhase >= 6 ? "transform -translate-y-full transition-transform duration-1500 ease-in-out" : ""}`}
         style={{
           background: `
             linear-gradient(rgba(200,200,200,0.15) 1px, transparent 1px),
@@ -118,6 +121,13 @@ const Welcome = () => {
             #ffffff
           `,
           backgroundSize: "24px 24px",
+          clipPath:
+            animationPhase < 2
+              ? "circle(0px at 85% 15%)"
+              : animationPhase >= 2.5
+                ? "circle(150% at 85% 15%)"
+                : "circle(50% at 85% 15%)",
+          transition: "clip-path 1.5s cubic-bezier(0.4, 0.0, 0.2, 1)",
         }}
       >
         {/* Status Bar for shopping (black) */}
@@ -148,31 +158,27 @@ const Welcome = () => {
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F3a0eaa095f264d03898ed24c2288df2c%2F448051771e134fcca96484d086b1ffea?format=webp&width=800"
             alt="Furrl Logo"
-            className="w-8 h-8 object-contain"
+            className="w-12 h-12 object-contain"
           />
         </div>
 
         {/* Text Content */}
-        <div className="absolute top-32 right-6 z-20 text-right">
+        <div className="absolute top-28 right-6 z-20 text-right">
           <h1
-            className="text-4xl font-light text-gray-600 mb-2"
-            style={{ fontFamily: "serif" }}
+            className="text-2xl font-light text-gray-600 mb-2"
+            style={{ fontFamily: "Dancing Script, cursive" }}
           >
             Stylish
           </h1>
-          <h2 className="text-3xl font-bold text-gray-800">
-            Homegrown
-            <br />
-            brands
-          </h2>
+          <h2 className="text-xl font-bold text-gray-800">Homegrown brands</h2>
         </div>
 
         {/* Blue Woman Image - Left side initially - Made even bigger */}
         <div
-          className={`absolute left-0 top-16 bottom-0 w-4/5 z-20 transition-all duration-2000 ${
-            animationPhase >= 2 && animationPhase < 4
+          className={`absolute -left-8 top-16 bottom-0 w-4/5 z-20 transition-all duration-4000 ${
+            animationPhase >= 2.5 && animationPhase < 3
               ? "opacity-100 transform translate-x-0 scale-100"
-              : animationPhase >= 4
+              : animationPhase >= 3
                 ? "opacity-0 transform translate-x-40 translate-y-32 scale-50"
                 : "opacity-0"
           }`}
@@ -189,9 +195,7 @@ const Welcome = () => {
           className={`absolute left-1/2 transform -translate-x-1/2 w-40 h-56 z-30 transition-all duration-2000 ${
             animationPhase < 3
               ? "opacity-0 translate-y-full bottom-[-400px]"
-              : animationPhase < 4
-                ? "opacity-100 translate-y-0 bottom-32"
-                : "opacity-100 translate-y-0 bottom-32 scale-90"
+              : "opacity-100 translate-y-0 bottom-32"
           }`}
         >
           <img
@@ -232,10 +236,10 @@ const Welcome = () => {
 
           {/* Disclaimer Text - All in one line, black text */}
           <div className="space-y-1">
-            <p className="text-base font-medium text-black whitespace-nowrap">
+            <p className="text-lg font-medium text-black whitespace-nowrap">
               Our Looks are addictive..
             </p>
-            <p className="text-sm text-gray-500">Scroll at your own risk!</p>
+            <p className="text-base text-gray-500">Scroll at your own risk!</p>
           </div>
         </div>
       </div>
